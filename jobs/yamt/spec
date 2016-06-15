@@ -1,0 +1,28 @@
+---
+name: yamt
+
+templates:
+  yamt_ctl.erb: bin/yamt_ctl
+
+packages:
+  - yamt
+
+properties:
+  yamt.host:
+    description: "Address of the Riemann server to report to."
+  yamt.port:
+    description: "Port of the Riemann server to report to."
+    default: 5555
+  yamt.interval:
+    description: "Interval between reports (in seconds)."
+    default: 5
+  yamt.tags:
+    description: "Tags to be attached to each reported event."
+    default: []
+  yamt.attributes:
+    description: "Attributes to be attached to each reported event"
+    default: []
+  yamt.ignore_interfaces:
+    description: "Interfaces to ignore."
+    default: "lo"
+

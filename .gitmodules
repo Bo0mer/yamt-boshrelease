@@ -1,0 +1,3 @@
+[submodule "src/yamt"]
+	path = src/yamt
+	url = https://github.com/bo0mer/yamt

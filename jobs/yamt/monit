@@ -1,0 +1,6 @@
+check process yamt
+  with pidfile /var/vcap/sys/run/yamt/yamt.pid
+  start program "/var/vcap/jobs/yamt/bin/yamt_ctl start"
+  stop program "/var/vcap/jobs/yamt/bin/yamt_ctl stop"
+  group vcap
+

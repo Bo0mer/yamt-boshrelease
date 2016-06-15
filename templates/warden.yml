@@ -1,0 +1,51 @@
+---
+name: yamt
+
+director_uuid: <%= `bosh status --uuid` %>
+
+releases:
+  - name: yamt
+    version: latest
+
+jobs:
+  - name: yamt
+    instances: 1
+    resource_pool: yamt
+    networks:
+      - name: yamt
+        static_ips:
+          - 10.244.17.2
+    templates:
+      - release: yamt
+        name: yamt
+networks:
+  - name: yamt
+    type: manual
+    subnets:
+      - range: 10.244.17.0/24
+        gateway: 10.244.17.1
+        static: [10.244.17.2-10.244.17.64]
+
+resource_pools:
+  - name: yamt
+    network: yamt
+    cloud_properties: {}
+    stemcell:
+      name: bosh-warden-boshlite-ubuntu-trusty-go_agent
+      version: latest
+
+compilation:
+  workers: 1
+  network: yamt
+  cloud_properties: {}
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  serial: false
+  canary_watch_time: 1000-60000
+  update_watch_time: 1000-60000
+
+properties:
+  yamt:
+    host: 10.244.20.18

@@ -1,0 +1,8 @@
+---
+name: yamt
+
+dependencies:
+  - go1.6.2
+
+files:
+  - yamt/**/*
