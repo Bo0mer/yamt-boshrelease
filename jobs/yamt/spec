@@ -25,4 +25,7 @@ properties:
   yamt.ignore_interfaces:
     description: "Interfaces to ignore."
     default: "lo"
+  yamt.ignore_devices:
+    description: "IO devices to ignore."
+    default: "ram|loop"
 

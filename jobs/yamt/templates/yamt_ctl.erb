@@ -17,8 +17,11 @@ case $1 in
       --host <%= p("yamt.host") %> \
       --port <%= p("yamt.port") %> \
       --event-host <%= name %>-<%= index %> \
-      --ignore-interfaces <%= p("yamt.ignore_interfaces") %> \
       --interval <%= p("yamt.interval") %> \
+      --net \
+      --ignore-interfaces "<%= p("yamt.ignore_interfaces") %>" \
+      --disk \
+      --ignore-devices "<%= p("yamt.ignore_devices") %>" \
       >>  $LOG_DIR/yamt.stdout.log \
       2>> $LOG_DIR/yamt.stderr.log
     ;;
