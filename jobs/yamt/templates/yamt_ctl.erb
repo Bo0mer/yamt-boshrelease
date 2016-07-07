@@ -25,10 +25,10 @@ case $1 in
       --attribute bosh-job=<%= name %> \
       --attribute bosh-deployment=<%= spec.deployment %> \
 <% p("yamt.attributes").each do |k, v| %> \
-      --attribute <%= esc("#{k}=#{v}") %> \
+      --attribute <%= "#{k}=#{v}" %> \
 <% end %> \
 <% p("yamt.tags").each do |tag| %> \
-      --tag <%= esc(tag) %> \
+      --tag <%= tag %> \
 <% end %> \
       >>  $LOG_DIR/yamt.stdout.log \
       2>> $LOG_DIR/yamt.stderr.log

@@ -49,3 +49,7 @@ update:
 properties:
   yamt:
     host: 10.244.20.18
+    tags: ["rate", "fooproduct"]
+    attributes:
+      landscape: prod
+      productive: true
