@@ -21,7 +21,7 @@ properties:
     default: []
   yamt.attributes:
     description: "Attributes to be attached to each reported event"
-    default: []
+    default: {}
   yamt.ignore_interfaces:
     description: "Interfaces to ignore."
     default: "lo"
