@@ -53,3 +53,7 @@ properties:
     attributes:
       landscape: prod
       productive: true
+    net:
+      enabled: true
+    disk:
+      enabled: false

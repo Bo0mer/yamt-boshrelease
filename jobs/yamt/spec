@@ -22,10 +22,16 @@ properties:
   yamt.attributes:
     description: "Attributes to be attached to each reported event"
     default: {}
-  yamt.ignore_interfaces:
+  yamt.net.enabled:
+    description: "Whether to report net events."
+    default: true
+  yamt.net.ignore_interfaces:
     description: "Interfaces to ignore."
     default: "lo"
-  yamt.ignore_devices:
+  yamt.disk.enabled:
+    description: "Whether to report disk events."
+    default: true
+  yamt.disk.ignore_devices:
     description: "IO devices to ignore."
     default: "ram|loop"
 

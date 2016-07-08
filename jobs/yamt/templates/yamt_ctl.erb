@@ -18,10 +18,14 @@ case $1 in
       --port <%= p("yamt.port") %> \
       --event-host <%= name %>-<%= index %> \
       --interval <%= p("yamt.interval") %> \
+<% if p("yamt.net.enabled") %> \
       --net \
-      --ignore-interfaces "<%= p("yamt.ignore_interfaces") %>" \
+      --ignore-interfaces "<%= p("yamt.net.ignore_interfaces") %>" \
+<% end %> \
+<% if p("yamt.disk.enabled") %> \
       --disk \
-      --ignore-devices "<%= p("yamt.ignore_devices") %>" \
+      --ignore-devices "<%= p("yamt.disk.ignore_devices") %>" \
+<% end %> \
       --attribute bosh-job=<%= name %> \
       --attribute bosh-deployment=<%= spec.deployment %> \
 <% p("yamt.attributes").each do |k, v| %> \
