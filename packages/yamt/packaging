@@ -4,7 +4,7 @@ export GOROOT=/var/vcap/packages/go1.6.2
 export GOPATH=${BOSH_COMPILE_TARGET}/Go
 export PATH=$GOROOT/bin:$PATH
 
-export PACKAGE_PATH=$GOPATH/src/github.com/bo0mer/yamt
+export PACKAGE_PATH=$GOPATH/src/github.com/Bo0mer/yamt
 mkdir -p ${PACKAGE_PATH}
 
 cp -R yamt/* ${PACKAGE_PATH}
